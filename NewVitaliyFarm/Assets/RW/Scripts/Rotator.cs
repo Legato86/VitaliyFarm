@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    [Header("Rotate Property")]
-    [SerializeField] Vector3 rotateDirection;
-    [Range(-100f, 100f)][SerializeField] float rotateSpeed;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private Vector3 rotateAxis;
+    private Transform wheelTrans;
+    
 
     void Start()
     {
-        
+        wheelTrans = transform.GetChild(0).GetChild(0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);   
+        
+        wheelTrans.transform.Rotate(rotateAxis * rotateSpeed * Time.deltaTime); 
     }
 }
