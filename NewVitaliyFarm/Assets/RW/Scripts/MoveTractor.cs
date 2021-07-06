@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveTractor : MonoBehaviour
 {
+
+    [Header("Traktor Property")] 
     [SerializeField] private float speed;
     [SerializeField] private float bounds;
     private float direction;
@@ -46,7 +48,7 @@ public class MoveTractor : MonoBehaviour
         isPress = false; 
     }
 
-
+    
 
 
 

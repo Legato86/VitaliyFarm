@@ -302,7 +302,6 @@ GameObject:
   - component: {fileID: 235779985}
   - component: {fileID: 235779984}
   - component: {fileID: 235779983}
-  - component: {fileID: 235779986}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
@@ -372,7 +371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 235779984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5745233201726492634}
+        m_TargetAssemblyTypeName: ButtonFire, Assembly-CSharp
+        m_MethodName: PressFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &235779984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,18 +422,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235779981}
   m_CullTransparentMesh: 1
---- !u!114 &235779986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235779981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f28a5b9aad7410419bf1c738fbe54ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &289565342
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,25 +977,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8180507056966982405, guid: 441a251f9bc00554ba1ccedeb6ba85d9, type: 3}
   m_PrefabInstance: {fileID: 8180507056001363486}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1241922867 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6095517810068432282, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+--- !u!114 &1241922868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1241922868, guid: 5243ed8e94410204599413815bedbc93, type: 3}
   m_PrefabInstance: {fileID: 5745233201726492633}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1241922868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241922867}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3ee035b61c0ed9409e8ecef4f57c2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  bounds: 22
 --- !u!1 &1508344888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1115,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2080048422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1115407435240941758, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+  m_PrefabInstance: {fileID: 1115407436738899352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2127893894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1186,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1115407436738899352
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941748, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115407435240941758, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
+      propertyPath: m_Name
+      value: Seno
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
 --- !u!1001 &3123277147524812998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,16 +1392,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3797523266407097086, guid: 5243ed8e94410204599413815bedbc93, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6095517810068432282, guid: 5243ed8e94410204599413815bedbc93, type: 3}
       propertyPath: m_Name
       value: Hay Machine
       objectReference: {fileID: 0}
+    - target: {fileID: 7928083637453344757, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+      propertyPath: senoPrefab
+      value: 
+      objectReference: {fileID: 2080048422}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+--- !u!114 &5745233201726492634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7928083637453344757, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+  m_PrefabInstance: {fileID: 5745233201726492633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f28a5b9aad7410419bf1c738fbe54ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8180507056001363486
 PrefabInstance:
   m_ObjectHideFlags: 0

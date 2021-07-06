@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonFire : MonoBehaviour
+public class ButtonFire1: MonoBehaviour
 {
     [Header("Fire Property")]
     [SerializeField] private GameObject senoPrefab;
@@ -13,14 +13,14 @@ public class ButtonFire : MonoBehaviour
 
     void Start()
     {
-        
+        nextFire = fireRate; 
     }
 
    
     void Update()
         
     {
-        nextFire -= Time.deltaTime; 
+        nextFire += Time.deltaTime; 
     }
 
     public void PressFire()
@@ -28,12 +28,12 @@ public class ButtonFire : MonoBehaviour
     {
         Debug.Log("Огонь");
 
-        if (nextFire < 0 ) 
+        if(nextFire > fireRate) 
         {
             GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation 
             Destroy(seno, 5f);
 
-            nextFire = fireRate; 
+            nextFire = 0; 
         }
         
         
