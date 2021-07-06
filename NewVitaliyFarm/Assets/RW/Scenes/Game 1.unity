@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 235779985}
   - component: {fileID: 235779984}
   - component: {fileID: 235779983}
+  - component: {fileID: 235779986}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
@@ -410,6 +411,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235779981}
   m_CullTransparentMesh: 1
+--- !u!114 &235779986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235779981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f28a5b9aad7410419bf1c738fbe54ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289565342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1508344889
 AudioSource:
   m_ObjectHideFlags: 0
