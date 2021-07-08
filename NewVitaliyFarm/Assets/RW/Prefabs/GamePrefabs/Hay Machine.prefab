@@ -9791,6 +9791,7 @@ GameObject:
   - component: {fileID: 1241922868}
   - component: {fileID: 7928083637453344757}
   - component: {fileID: 1877228796}
+  - component: {fileID: 5745233201726492635}
   m_Layer: 0
   m_Name: Hay Machine
   m_TagString: Untagged
@@ -9852,7 +9853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6095517810068432282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1f8177249c9c1745bd6f86b324bacb3, type: 3}
   m_Name: 
@@ -9860,3 +9861,17 @@ MonoBehaviour:
   senoPrefab: {fileID: 0}
   spawnPoint: {fileID: 512234205694430816}
   fireRate: 5
+--- !u!114 &5745233201726492635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095517810068432282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea48c4045f4290e41aafcbe96c006b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  senoPrefab: {fileID: 0}
+  fireRate: 0.5

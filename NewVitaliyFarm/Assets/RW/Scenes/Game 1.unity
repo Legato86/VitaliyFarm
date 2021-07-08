@@ -372,9 +372,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1877228797}
-        m_TargetAssemblyTypeName: ButtonFire1, Assembly-CSharp
-        m_MethodName: PressFire
+      - m_Target: {fileID: 5745233201726492635}
+        m_TargetAssemblyTypeName: HomeWorkTime, Assembly-CSharp
+        m_MethodName: PressAim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -383,7 +383,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &235779984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,17 +1115,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1877228797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1877228796, guid: 5243ed8e94410204599413815bedbc93, type: 3}
-  m_PrefabInstance: {fileID: 5745233201726492633}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f8177249c9c1745bd6f86b324bacb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2080048422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1115407435240941758, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
@@ -1407,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5745233201726492635, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+      propertyPath: senoPrefab
+      value: 
+      objectReference: {fileID: 2080048422}
     - target: {fileID: 6095517810068432282, guid: 5243ed8e94410204599413815bedbc93, type: 3}
       propertyPath: m_Name
       value: Hay Machine
@@ -1417,6 +1410,17 @@ PrefabInstance:
       objectReference: {fileID: 2080048422}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+--- !u!114 &5745233201726492635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5745233201726492635, guid: 5243ed8e94410204599413815bedbc93, type: 3}
+  m_PrefabInstance: {fileID: 5745233201726492633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea48c4045f4290e41aafcbe96c006b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8180507056001363486
 PrefabInstance:
   m_ObjectHideFlags: 0
