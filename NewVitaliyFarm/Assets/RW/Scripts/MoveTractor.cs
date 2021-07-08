@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveTractor : MonoBehaviour
 {
-
+   
     [Header("Traktor Property")] 
     [SerializeField] private float speed;
     [SerializeField] private float bounds;

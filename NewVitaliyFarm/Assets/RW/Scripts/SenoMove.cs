@@ -20,4 +20,21 @@ public class SenoMove : MonoBehaviour
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
         senoMode1.transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "SenoDestroyTrigger") // other.CompareTag("SenoDestroyTrigger")
+        {
+            Destroy(gameObject);
+            
+        }
+        // if (other.gameObject.name == "SenoDestroyTrigger")
+        //{
+
+        //  Destroy(gameObject);
+    }   //}
+
+
 }
+

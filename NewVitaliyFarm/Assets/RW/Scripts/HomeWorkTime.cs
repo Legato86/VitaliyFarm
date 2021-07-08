@@ -7,6 +7,7 @@ public class HomeWorkTime : MonoBehaviour
     //If the Aim button is pressed, a senoPrefab
     //will be Instantiated every 0.5 seconds.
 
+    [SerializeField] Transform senoContainer;
     public GameObject senoPrefab;
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
@@ -18,16 +19,17 @@ public class HomeWorkTime : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Aim") && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            Instantiate(senoPrefab, transform.position, transform.rotation);
-        }
+        
 
     }
     public void PressAim() 
     {
-
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            GameObject seno = Instantiate(senoPrefab, transform.position, transform.rotation);
+            seno.transform.SetParent(senoContainer); 
+        }
     }
 }   
 
