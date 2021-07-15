@@ -28,8 +28,8 @@ public class SenoMove : MonoBehaviour
 
         if(sheep != null)
         {
+            sheep.SaveSheep(); 
             Destroy(gameObject);
-            Destroy(col.gameObject);
 
         }
         if (col.gameObject.tag == "SenoDestroyTrigger") // other.CompareTag("SenoDestroyTrigger")

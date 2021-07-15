@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveDirection: {x: 0, y: -1, z: 0}
+  force: 5
+  HeartParticlePrefab: {fileID: 7466743718686836717, guid: 30d77889bde6d9949a9104633044b961, type: 3}
 --- !u!54 &3567820403250859273
 Rigidbody:
   m_ObjectHideFlags: 0

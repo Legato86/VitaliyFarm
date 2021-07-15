@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SheepSpawner : MonoBehaviour
 {
+    [SerializeField] private List<Transform> spawnPoints;
+
+
     [SerializeField] private GameObject sheepPrefab; //префаб овци
     [SerializeField] private Vector3 spawnPosition; //позиция спауна
     [SerializeField] private Vector2 xSpawnBound; //граница спауна по координате (будет выбрана рандомная точка)
@@ -13,6 +16,8 @@ public class SheepSpawner : MonoBehaviour
     [SerializeField] private float waveRate; //частота между волнами 
     [SerializeField] private int sheepCountWaveIncrease;
 
+    [SerializeField] private int waveCount;
+
     private void Start()
     {
         StartCoroutine(Spawn());
@@ -21,17 +26,19 @@ public class SheepSpawner : MonoBehaviour
     
     private IEnumerator Spawn()
     {
-        while (true)
+        while (waveCount > 0)
         {
             for (int i = 0; i < sheepCount; i++)
             {
-                CreateSheep(); //Spawn
+                // CreateSheep(); //Spawn
+                CreateSheepInSpawnPoints();
                 yield return new WaitForSeconds(spawnRate);
 
             }
             sheepCount *= sheepCountWaveIncrease; // sheepCount = sheepCount * sheepCountWaveIncrease; - длинная запись 
             yield return new WaitForSeconds(waveRate);
-
+            waveCount--;
+           
         }
         
     }
@@ -43,6 +50,13 @@ public class SheepSpawner : MonoBehaviour
         Instantiate(sheepPrefab, randomSpawnPosition, sheepPrefab.transform.rotation);
         
         // GameObject sheep = можно сделать сcылку конкретно на объект
+    }
+
+    public void CreateSheepInSpawnPoints()
+    {
+        int randomPointIndex = Random.Range(0, spawnPoints.Count);
+        Instantiate(sheepPrefab, spawnPoints[randomPointIndex].position, sheepPrefab.transform.rotation);
+
     }
 
 
