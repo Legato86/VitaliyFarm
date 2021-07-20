@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MoveTractor : MonoBehaviour
 {
-   
+   enum TractorCondition { Move, Stop }
+
+    TractorCondition tractorCondition = TractorCondition.Stop;
+
+
     [Header("Traktor Property")] 
     [SerializeField] private float speed;
     [SerializeField] private float bounds;
     private float direction;
-    private bool isPress;
+    
 
     void Start()
     {
@@ -19,7 +23,7 @@ public class MoveTractor : MonoBehaviour
     
     void Update()
     {
-         if (isPress == true)
+         if (tractorCondition == TractorCondition.Move) 
          {
             if (((transform.position.x > -bounds) && (direction == 1f)) || (transform.position.x < bounds) && (direction == -1f))
             {
@@ -36,16 +40,16 @@ public class MoveTractor : MonoBehaviour
     public void PressRight()
     {
         direction = -1f;
-        isPress = true;
+        tractorCondition = TractorCondition.Move;
     }
     public void PressLeft()
     {
         direction = 1f;
-        isPress = true;
+        tractorCondition = TractorCondition.Move;
     }
     public void StopPress() 
-    {  
-        isPress = false; 
+    {
+        tractorCondition = TractorCondition.Stop; 
     }
 
     
