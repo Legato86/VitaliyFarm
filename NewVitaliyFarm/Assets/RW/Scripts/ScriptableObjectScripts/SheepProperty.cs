@@ -40,7 +40,20 @@ public class SheepProperty : ScriptableObject
     {
         get 
         {
-            return speed;
+
+            if(speed == 0)
+            {
+
+                return 5f;
+
+            }
+            else
+            {
+
+                return speed;
+
+            }
+            
         }
         // set
         //{

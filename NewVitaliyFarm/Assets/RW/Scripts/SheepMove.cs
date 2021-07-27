@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepMove : MonoBehaviour
 {
-    [SerializeField] private SheepProperty sheepProperty;
+    [SerializeField] private List<SheepProperty> sheepProperty;
 
     //[SerializeField] private float startSpeed;   
     [SerializeField] private Vector3 moveDirection;
@@ -17,6 +17,10 @@ public class SheepMove : MonoBehaviour
     private BoxCollider bc;
     private MeshRenderer mr;
     private float moveSpeed;
+    int randomSheepPropertyIndex;
+
+    [SerializeField] private SoundManager soundManager;
+
 
     private void Awake()  // private - скрывает компонент 
     {
@@ -27,14 +31,17 @@ public class SheepMove : MonoBehaviour
 
     private void Start()
     {
-
-        Debug.Log(sheepProperty.Name); // get
-        sheepProperty.Name = "Molly"; // set
-        Debug.Log(sheepProperty.Name); // get
+        randomSheepPropertyIndex = Random.Range(0, sheepProperty.Count);
 
 
-        moveSpeed = sheepProperty.Speed;
-        mr.material = sheepProperty.Material;
+
+        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+        sheepProperty[randomSheepPropertyIndex].Name = "Molly"; // set
+        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+
+
+        moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed;
+        mr.material = sheepProperty[randomSheepPropertyIndex].Material;
     }
     void Update()
     {
@@ -55,6 +62,8 @@ public class SheepMove : MonoBehaviour
         GameObject particle = Instantiate(heartParticlePrefab, transform.position + sheepOffset, heartParticlePrefab.transform.rotation);  // спауним патикл в позиции овци + патикл со здвигом
         Destroy(particle, 2f);
         Destroy(gameObject, 0.9f);
+
+        soundManager.PlaySheepHitClip(); 
     }
     
     public void JumpThrowWater()
@@ -70,7 +79,7 @@ public class SheepMove : MonoBehaviour
     {
         //-включить кинематику - восстановить скорость
         rb.isKinematic = true;
-        moveSpeed = sheepProperty.Speed; //состояние идти
+        moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed; //состояние идти
 
     }
 }

@@ -97,12 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5220e5125ecb6fc4e86893214084a652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepProperty: {fileID: 11400000, guid: 72f74fd02ed05f24f83008d715281090, type: 2}
+  sheepProperty:
+  - {fileID: 11400000, guid: 744fe04d260be0a4b95c92b1432eafa5, type: 2}
+  - {fileID: 11400000, guid: 72f74fd02ed05f24f83008d715281090, type: 2}
+  - {fileID: 11400000, guid: 20449abb7d8d2be44b83ec4dc938ea2b, type: 2}
   moveDirection: {x: 0, y: -1, z: 0}
   force: 700
   heartParticlePrefab: {fileID: 7466743718686836717, guid: 30d77889bde6d9949a9104633044b961, type: 3}
   sheepOffset: {x: 0, y: 5, z: 0}
-  jumpForce: 250
+  jumpForce: 350
+  soundManager: {fileID: 11400000, guid: 32930ce311d1bfc428315cd4b231b948, type: 2}
 --- !u!54 &3567820403250859273
 Rigidbody:
   m_ObjectHideFlags: 0
