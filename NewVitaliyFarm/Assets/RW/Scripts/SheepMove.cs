@@ -4,34 +4,41 @@ using UnityEngine;
 
 public class SheepMove : MonoBehaviour
 {
-    [SerializeField] private float startSpeed;
-    private float moveSpeed;
+    [SerializeField] private SheepProperty sheepProperty;
 
+    //[SerializeField] private float startSpeed;   
     [SerializeField] private Vector3 moveDirection;
-
     [SerializeField] private float force;
-    private Rigidbody rb;
-    private BoxCollider bc;
-    [SerializeField] private GameObject HeartParticlePrefab; // получит префаб 
+    [SerializeField] private GameObject heartParticlePrefab; //получить префаб
     [SerializeField] private Vector3 sheepOffset;
     [SerializeField] private float jumpForce;
 
+    private Rigidbody rb;
+    private BoxCollider bc;
+    private MeshRenderer mr;
+    private float moveSpeed;
+
     private void Awake()  // private - скрывает компонент 
     {
-
         rb = GetComponent<Rigidbody>();
         bc = GetComponent<BoxCollider>();
+        mr = GetComponent<MeshRenderer>();
     }
 
     private void Start()
     {
-        moveSpeed = startSpeed;
+
+        Debug.Log(sheepProperty.Name); // get
+        sheepProperty.Name = "Molly"; // set
+        Debug.Log(sheepProperty.Name); // get
 
 
-
+        moveSpeed = sheepProperty.Speed;
+        mr.material = sheepProperty.Material;
     }
     void Update()
     {
+        //проверить состояние и идти только если сост идти
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime); 
     }
 
@@ -45,23 +52,25 @@ public class SheepMove : MonoBehaviour
         rb.useGravity = false; //3. отключить гравитацию
         //4. Спаунить патикл со здвигом над овцой или за овцой
 
-        GameObject particle = Instantiate(HeartParticlePrefab, transform.position + sheepOffset, HeartParticlePrefab.transform.rotation);  // спауним патикл в позиции овци + патикл со здвигом
-        Destroy(particle, 2f); 
+        GameObject particle = Instantiate(heartParticlePrefab, transform.position + sheepOffset, heartParticlePrefab.transform.rotation);  // спауним патикл в позиции овци + патикл со здвигом
+        Destroy(particle, 2f);
         Destroy(gameObject, 0.9f);
     }
     
     public void JumpThrowWater()
     {
+        //отключить кинематику -отключить скорость - прыжок еед форс 
         rb.isKinematic = false;
-        moveSpeed = 0;
+        moveSpeed = 0; //состояние стоп
         rb.AddForce(new Vector3(0f, 1f, -1f) * jumpForce);
 
     }
 
     public void LandThrowWater()
     {
+        //-включить кинематику - восстановить скорость
         rb.isKinematic = true;
-        moveSpeed = startSpeed;
+        moveSpeed = sheepProperty.Speed; //состояние идти
 
     }
 }
