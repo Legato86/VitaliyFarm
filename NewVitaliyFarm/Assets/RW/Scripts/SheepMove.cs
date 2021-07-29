@@ -20,7 +20,7 @@ public class SheepMove : MonoBehaviour
     int randomSheepPropertyIndex;
 
     [SerializeField] private SoundManager soundManager;
-
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Awake()  // private - скрывает компонент 
     {
@@ -35,9 +35,9 @@ public class SheepMove : MonoBehaviour
 
 
 
-        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
-        sheepProperty[randomSheepPropertyIndex].Name = "Molly"; // set
-        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+        // Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get 
+        // sheepProperty[randomSheepPropertyIndex].Name = "Molly"; // set
+        // Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
 
 
         moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed;
@@ -63,7 +63,9 @@ public class SheepMove : MonoBehaviour
         Destroy(particle, 2f);
         Destroy(gameObject, 0.9f);
 
-        soundManager.PlaySheepHitClip(); 
+        soundManager.PlaySheepHitClip();
+        scoreManager.AddSaveSheep(); 
+
     }
     
     public void JumpThrowWater()
@@ -81,7 +83,16 @@ public class SheepMove : MonoBehaviour
         rb.isKinematic = true;
         moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed; //состояние идти
 
-        soundManager.PlayDropClip();
     }
+
+    public void DestroySheep()
+    {
+
+        soundManager.PlayDropClip();
+        scoreManager.AddDropSheep();
+        Destroy(gameObject);
+
+    }
+
 }
 

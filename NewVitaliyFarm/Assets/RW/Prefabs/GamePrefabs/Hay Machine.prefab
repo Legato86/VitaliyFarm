@@ -9792,6 +9792,8 @@ GameObject:
   - component: {fileID: 6065250014114476182}
   - component: {fileID: 4191213877954053023}
   - component: {fileID: 8471558940100374712}
+  - component: {fileID: 939086754}
+  - component: {fileID: 939086753}
   m_Layer: 0
   m_Name: Hay Machine
   m_TagString: Untagged
@@ -9878,3 +9880,43 @@ MonoBehaviour:
   senoPrefab: {fileID: 1115407435240941758, guid: 90bc28ddcd1c11243a4deab0c1da6d48, type: 3}
   fireRate: 0.5
   soundManager: {fileID: 11400000, guid: 32930ce311d1bfc428315cd4b231b948, type: 2}
+--- !u!65 &939086754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979692408305982201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &939086753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979692408305982201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecae5d678c31d4b4fa6a9001f057bcb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveSheepEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SheepMove, Assembly-CSharp
+        m_MethodName: SaveSheep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
