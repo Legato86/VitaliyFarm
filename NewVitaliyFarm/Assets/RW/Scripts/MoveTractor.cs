@@ -56,6 +56,7 @@ public class MoveTractor : MonoBehaviour
     {
         tractorCondition = TractorCondition.Stop;
 
+        soundManager.PlayMoveArrowClip();
     }
 
     
