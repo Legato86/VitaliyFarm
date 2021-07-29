@@ -11,6 +11,7 @@ public class SoundManager : ScriptableObject
     [SerializeField] private AudioClip shootClip; //AudioClip - контейнер для звука
     [SerializeField] private AudioClip sheepHitClip;
     [SerializeField] private AudioClip sheepDropClip;
+    [SerializeField] private AudioClip moveArrowClip;
 
     private Vector3 cameraPosition;
 
@@ -34,4 +35,10 @@ public class SoundManager : ScriptableObject
         PlaySound(sheepDropClip);
     }
 
+    public void PlayMoveArrowClip()
+    {
+
+        PlaySound(moveArrowClip);
+
+    }
 }

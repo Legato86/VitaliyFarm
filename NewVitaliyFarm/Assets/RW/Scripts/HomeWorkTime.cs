@@ -12,6 +12,8 @@ public class HomeWorkTime : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
 
+    [SerializeField] private SoundManager soundManager;
+
     void Start()
     {
 
@@ -30,7 +32,11 @@ public class HomeWorkTime : MonoBehaviour
             GameObject seno = Instantiate(senoPrefab, transform.position, transform.rotation);
             seno.transform.SetParent(senoContainer); 
         }
+
+        soundManager.PlayShootClip(); 
+
     }
+
 }   
 
 

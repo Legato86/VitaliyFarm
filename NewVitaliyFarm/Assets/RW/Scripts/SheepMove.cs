@@ -81,6 +81,7 @@ public class SheepMove : MonoBehaviour
         rb.isKinematic = true;
         moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed; //состояние идти
 
+        soundManager.PlayDropClip();
     }
 }
 

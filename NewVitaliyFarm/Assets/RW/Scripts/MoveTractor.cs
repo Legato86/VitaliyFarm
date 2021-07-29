@@ -13,7 +13,8 @@ public class MoveTractor : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float bounds;
     private float direction;
-    
+
+    [SerializeField] private SoundManager soundManager;
 
     void Start()
     {
@@ -41,15 +42,20 @@ public class MoveTractor : MonoBehaviour
     {
         direction = -1f;
         tractorCondition = TractorCondition.Move;
+
+        soundManager.PlayMoveArrowClip();
     }
     public void PressLeft()
     {
         direction = 1f;
         tractorCondition = TractorCondition.Move;
+
+        soundManager.PlayMoveArrowClip();
     }
     public void StopPress() 
     {
-        tractorCondition = TractorCondition.Stop; 
+        tractorCondition = TractorCondition.Stop;
+
     }
 
     
