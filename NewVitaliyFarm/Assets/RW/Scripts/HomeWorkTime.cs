@@ -14,23 +14,50 @@ public class HomeWorkTime : MonoBehaviour
 
     [SerializeField] private SoundManager soundManager;
 
-    void Start()
+    [Header("SenoPool")]
+    [SerializeField] private int senoPoolSize;
+    [SerializeField] private List<GameObject> senos;
+    private int currentSenoIndex;
+
+    private void Awake()
     {
+        senos = new List<GameObject>();
+    }
+    private void Start()
+    {
+
+        for (int i = 0; i < senoPoolSize; i++)
+        {
+
+            senos.Add(Instantiate(senoPrefab));
+            senos[i].transform.SetParent(senoContainer);
+            senos[i].SetActive(false);
+
+        }
 
     }
 
-    void Update()
-    {
-        
 
-    }
     public void PressAim() 
     {
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            GameObject seno = Instantiate(senoPrefab, transform.position, transform.rotation);
-            seno.transform.SetParent(senoContainer); 
+
+            senos[currentSenoIndex].transform.position = transform.position;
+            senos[currentSenoIndex].SetActive(true);
+
+            currentSenoIndex++;
+            if(currentSenoIndex >= senoPoolSize)
+            {
+
+                currentSenoIndex = 0;
+
+            }
+
+
+            // GameObject seno = Instantiate(senoPrefab, transform.position, transform.rotation);
+          
         }
 
         soundManager.PlayShootClip(); 

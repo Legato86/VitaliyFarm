@@ -14,12 +14,10 @@ public class MoveTractor : MonoBehaviour
     [SerializeField] private float bounds;
     private float direction;
 
+  
     [SerializeField] private SoundManager soundManager;
 
-    void Start()
-    {
-        
-    }
+   
 
     
     void Update()
@@ -33,8 +31,6 @@ public class MoveTractor : MonoBehaviour
 
          }
         
-        
-
     }
 
 

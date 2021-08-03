@@ -20,7 +20,10 @@ public class SheepMove : MonoBehaviour
     int randomSheepPropertyIndex;
 
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private GameEvent SheepDroppedEvent;
+    [SerializeField] private GameEvent SheepSavedEvent;
+
+    // [SerializeField] private ScoreManager scoreManager;
 
     private void Awake()  // private - скрывает компонент 
     {
@@ -64,7 +67,9 @@ public class SheepMove : MonoBehaviour
         Destroy(gameObject, 0.9f);
 
         soundManager.PlaySheepHitClip();
-        scoreManager.AddSaveSheep(); 
+        SheepSavedEvent.Raise();
+
+        // scoreManager.AddSaveSheep(); 
 
     }
     
@@ -89,7 +94,8 @@ public class SheepMove : MonoBehaviour
     {
 
         soundManager.PlayDropClip();
-        scoreManager.AddDropSheep();
+        SheepDroppedEvent.Raise();
+        // scoreManager.AddDropSheep();
         Destroy(gameObject);
 
     }
