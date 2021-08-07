@@ -6,9 +6,10 @@ public class SheepSpawner : MonoBehaviour
 {
     [SerializeField] private List<Transform> spawnPoints;
 
+    [SerializeField] private string objectTag;
 
-    [SerializeField] private GameObject sheepPrefab; //префаб овци
-    [SerializeField] private Vector3 spawnPosition; //позиция спауна
+    // [SerializeField] private GameObject sheepPrefab; //префаб овци 
+    [SerializeField] private Vector3 spawnPosition; //позиция спауна 
     [SerializeField] private Vector2 xSpawnBound; //граница спауна по координате (будет выбрана рандомная точка)
 
     [SerializeField] private int sheepCount; // задаем количество овец 
@@ -47,17 +48,20 @@ public class SheepSpawner : MonoBehaviour
         //22 - -22, 0, 55 
         float xRandomPosition = Random.Range(xSpawnBound.x, xSpawnBound.y); //найти случайную позицию по оси икс   
         Vector3 randomSpawnPosition = new Vector3(xRandomPosition, spawnPosition.y, spawnPosition.z); // сформировать новую рандомную позицию 
-        Instantiate(sheepPrefab, randomSpawnPosition, sheepPrefab.transform.rotation);
-        
-        // GameObject sheep = можно сделать сcылку конкретно на объект
+        // Instantiate(sheepPrefab, randomSpawnPosition, sheepPrefab.transform.rotation); // GameObject sheep - можно сделать сcылку конкретно на объект
+
+        GameObject sheepObject = ObjectPooler.objectPooler.GetPooledObject(objectTag);
+        if(sheepObject == null) { return; } // return; - выходит из метода CreateSheep() 
+        sheepObject.transform.position = randomSpawnPosition;
+        sheepObject.SetActive(true);
+            
     }
 
-    public void CreateSheepInSpawnPoints()
-    {
-        int randomPointIndex = Random.Range(0, spawnPoints.Count);
-        Instantiate(sheepPrefab, spawnPoints[randomPointIndex].position, sheepPrefab.transform.rotation);
-
-    }
+    //public void CreateSheepInSpawnPoints()
+    //{
+    //    int randomPointIndex = Random.Range(0, spawnPoints.Count);
+    //    Instantiate(sheepPrefab, spawnPoints[randomPointIndex].position, sheepPrefab.transform.rotation);
+    //}
 
 
 }

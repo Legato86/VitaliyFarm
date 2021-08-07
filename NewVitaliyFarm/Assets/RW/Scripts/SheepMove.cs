@@ -64,7 +64,8 @@ public class SheepMove : MonoBehaviour
 
         GameObject particle = Instantiate(heartParticlePrefab, transform.position + sheepOffset, heartParticlePrefab.transform.rotation);  // спауним патикл в позиции овци + патикл со здвигом
         Destroy(particle, 2f);
-        Destroy(gameObject, 0.9f);
+        // Destroy(gameObject, 0.9f);
+        gameObject.SetActive(false); // ДЗ - добавить коорутину или таймер 
 
         soundManager.PlaySheepHitClip();
         SheepSavedEvent.Raise();
@@ -96,7 +97,8 @@ public class SheepMove : MonoBehaviour
         soundManager.PlayDropClip();
         SheepDroppedEvent.Raise();
         // scoreManager.AddDropSheep();
-        Destroy(gameObject);
+        // Destroy(gameObject); 
+        gameObject.SetActive(false);
 
     }
 
