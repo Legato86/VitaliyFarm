@@ -32,19 +32,23 @@ public class SheepMove : MonoBehaviour
         mr = GetComponent<MeshRenderer>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         randomSheepPropertyIndex = Random.Range(0, sheepProperty.Count);
+        moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed;
+        mr.material = sheepProperty[randomSheepPropertyIndex].Material;
+        rb.isKinematic = true;
+        bc.enabled = true;
+        rb.useGravity = true;
+    }
 
 
-
+    private void Start()
+    {
         // Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get 
         // sheepProperty[randomSheepPropertyIndex].Name = "Molly"; // set
         // Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
 
-
-        moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed;
-        mr.material = sheepProperty[randomSheepPropertyIndex].Material;
     }
     void Update()
     {
